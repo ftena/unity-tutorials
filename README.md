@@ -30,3 +30,20 @@ The objectives for those projects were:
 - Change a GameObject using a simple script 
 - Explain the relationship between scripts and components 
 
+# Introduction to Audio
+
+Project made following the project 'Foundations of real-time audio'. Objetives:
+
+- Define the role of an Audio Source, an Audio Clip, and an Audio Listener in a Scene
+- Implement audio that appears to come from a particular point in 3D space (e.g. localized sound effects) and audio that appears to come from no place in particular (e.g. background music)
+- Configure the rolloff of an Audio Source in order to control how its volume changes with distance (e.g. logarithmic, linear, or custom)
+- Programmatically play, pause, and stop sounds from a script in order to control audio effects based on certain events.
+
+# Foundations of real-time 2D
+
+Project made following the project 'Foundations of real-time 2D'. Objetives:
+
+- Create a new 2D project.
+- Create and manipulate 2D objects in the Unity Editor.
+- Control the properties and behaviors of 2D objects, including ways they interact with each other.
+- Find and import 2D assets from the Unity Asset Store.
