@@ -21,6 +21,7 @@ public class Cube : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         transform.Rotate(20.0f * Time.deltaTime * horizontalInput, 0.0f, 0.0f);
 
+        // Change the color when the space bar is pressed
         if (Input.GetKeyDown(KeyCode.Space)) {
             float r = Random.Range(0.0f, 1.0f);
             float g = Random.Range(0.0f, 1.0f);
@@ -28,6 +29,8 @@ public class Cube : MonoBehaviour
 
             Renderer.material.color = new Color(r, g, b, 0.4f);
         }
+
+        // Change the size depending on the up/down arrow keys
         if (Input.GetKeyDown(KeyCode.UpArrow)) {
             transform.localScale += Vector3.one * 1.1f;
         }
