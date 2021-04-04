@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        // Physics.gravity: the gravity applied to all rigid bodies in the Scene.
         Physics.gravity *= gravityModifier;
     }
 
