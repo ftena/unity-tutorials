@@ -9,3 +9,6 @@ This project was made following the tutorial 'Unit 2 - Basic Gameplay' (https://
 
 # Personal Project
 This project was made following the lab 'Lab 2 - New Project with Primitives' (https://learn.unity.com/tutorial/lab-2-new-project-with-primitives)
+
+# Prototype 3
+This project was made following the tutorial 'Unit 3 - Sound and Effects' (https://learn.unity.com/project/unit-3-sound-and-effects)
