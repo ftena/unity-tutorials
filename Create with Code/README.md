@@ -11,4 +11,9 @@ This project was made following the tutorial 'Unit 2 - Basic Gameplay' (https://
 This project was made following the lab 'Lab 2 - New Project with Primitives' (https://learn.unity.com/tutorial/lab-2-new-project-with-primitives)
 
 # Prototype 3
-This project was made following the tutorial 'Unit 3 - Sound and Effects' (https://learn.unity.com/project/unit-3-sound-and-effects)
+This project was made following the tutorial 'Unit 3 - Sound and Effects' (https://learn.unity.com/project/unit-3-sound-and-effects). It includes:
+
+- Gravity, Animation, Sound, and Particle Effects
+- Jump Force, Rigidbody constraints
+- Script communication, Tags
+- Animation Controllers, States, Layers and Transitions, SetTrigger(), SetBool(), SetInt()

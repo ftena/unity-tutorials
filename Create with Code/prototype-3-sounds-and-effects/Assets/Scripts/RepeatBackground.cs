@@ -11,7 +11,7 @@ public class RepeatBackground : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        // We use the size of the BoxCollider to get the width for this GameObject
+        // we use the size of the BoxCollider to get the width for this GameObject
         repeatWidth = GetComponent<BoxCollider>().size.x / 2;
     }
 
