@@ -16,7 +16,10 @@ This project was made following the tutorial 'Unit 3 - Sound and Effects' (https
 - Animation Controllers, States, Layers and Transitions, SetTrigger(), SetBool(), SetInt()
 
 # Personal Project
-This project was made following the lab 'Lab 2 - New Project with Primitives' (https://learn.unity.com/tutorial/lab-2-new-project-with-primitives)
+This project was made following the labs:
+
+- Lab 2 - New Project with Primitives (https://learn.unity.com/tutorial/lab-2-new-project-with-primitives)
+- Lab 3 - Player Control (https://learn.unity.com/tutorial/lab-3-player-control)
 
 # Mod the cube
 This project was made following the exercise https://learn.unity.com/tutorial/mod-the-cube
