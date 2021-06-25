@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private float speed = 10.0f;
+    private float zBound = 7.0f;
     // If using physics, declare a new Rigidbody playerRb variable for it and initialize it in Start()
     private Rigidbody playerRb;
 
@@ -30,5 +31,16 @@ public class PlayerController : MonoBehaviour
         playerRb.AddForce(Vector3.forward * speed * verticalInput);
         // Try this!: transform.Translate(Vector3.forward * speed * verticalInput * Time.deltaTime);
         playerRb.AddForce(Vector3.right * speed * horizontalInput);
+
+        // The  Player cannot go off the screen. Check and reset the position if necessary.
+        if(transform.position.z < -zBound)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);
+        }
+
+        if(transform.position.z > zBound)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
+        }
     }
 }
