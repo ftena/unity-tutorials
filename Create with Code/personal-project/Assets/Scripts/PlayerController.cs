@@ -18,6 +18,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Moves the player based on arrow key input
+        MovePlayer();
+
+        // Prevent the player from leaving the top or bottom of the screen
+        ConstrainPlayerMovement();
+    }
+
+    void MovePlayer()
+    {
         /* Notes:
         a) If using arrow keys, declare new verticalInput and/or horizontalInput variables 
         b) If basing your movement off a key press, create the if-statement to test for the KeyCode
@@ -31,7 +40,10 @@ public class PlayerController : MonoBehaviour
         playerRb.AddForce(Vector3.forward * speed * verticalInput);
         // Try this!: transform.Translate(Vector3.forward * speed * verticalInput * Time.deltaTime);
         playerRb.AddForce(Vector3.right * speed * horizontalInput);
+    }
 
+    void ConstrainPlayerMovement()
+    {
         // The  Player cannot go off the screen. Check and reset the position if necessary.
         if(transform.position.z < -zBound)
         {
