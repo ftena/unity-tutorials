@@ -25,7 +25,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnObstacle ()
     {
-        if (!playerControllerScript.gameOver)
+        if (!playerControllerScript.gameOver && playerControllerScript.introFinished)
         {
             int randomIndex = Random.Range(0, obstaclePrefabs.Length);
             Instantiate(obstaclePrefabs[randomIndex], spawnPos, obstaclePrefabs[randomIndex].transform.rotation);

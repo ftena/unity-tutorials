@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround = true; // to prevent double jump
     public bool gameOver = false;
     public int numberOfJumpings = 2;
+    public float dashSpeed = 1.0f; // to control the dash speed
+    public bool introFinished = false; // to control when the intro finishes
     public ParticleSystem explosionParticle; // reference to a ParticleSystem
     public ParticleSystem dirtParticle; // reference to a ParticleSystem
     public AudioClip jumpSound; // reference to sound effect
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb; // reference to own Rigidbody
     private Animator playerAnim;  // reference to own Animator
     private AudioSource playerAudio; // reference to own AudioSource
+    private float introSpeed = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +33,26 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.x < 0)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * introSpeed);
+        }
+        else
+        {
+            introFinished = true;
+            playerAnim.SetFloat("Speed_f", 1.0f);
+        }
+
         // Make player jump if spacebar pressed
-        if(Input.GetKeyDown(KeyCode.Space) && !gameOver && numberOfJumpings > 0)
+        Jump();
+
+        // Double speed if horizontal keys are pressed
+        Dash();
+    }
+
+    void Jump()
+    {
+        if(introFinished && Input.GetKeyDown(KeyCode.Space) && !gameOver && numberOfJumpings > 0)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
@@ -44,6 +65,24 @@ public class PlayerController : MonoBehaviour
             double jump normally does in most games, you can reset
             the player's velocity to 0 using "playerRb.velocity = Vector3.zero;"*/
             playerRb.velocity = Vector3.zero;
+        }
+    }
+
+    void Dash()
+    {
+        if (introFinished && isOnGround)
+        {
+            if (Input.GetButton("Horizontal")) // left control
+            {
+                dashSpeed = 2.0f;
+                playerAnim.speed = dashSpeed;
+            }
+
+            if (!Input.GetButton("Horizontal")) // left control
+            {
+                dashSpeed = 1.0f;
+                playerAnim.speed = dashSpeed;
+            }
         }
     }
 

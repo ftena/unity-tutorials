@@ -546,7 +546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -642,6 +642,8 @@ MonoBehaviour:
   isOnGround: 1
   gameOver: 0
   numberOfJumpings: 1
+  dashSpeed: 2
+  introFinished: 0
   explosionParticle: {fileID: 594775434}
   dirtParticle: {fileID: 1294304128}
   jumpSound: {fileID: 8300000, guid: 08ab7053d586c458db3774d33c141a4b, type: 3}
@@ -842,6 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36d8c7e4ea83a046a54acc520dc7b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 30
 --- !u!65 &835818923
 BoxCollider:
   m_ObjectHideFlags: 0
