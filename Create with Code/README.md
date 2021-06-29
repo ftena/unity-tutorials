@@ -15,6 +15,9 @@ This project was made following the tutorial 'Unit 3 - Sound and Effects' (https
 - Script communication, Tags
 - Animation Controllers, States, Layers and Transitions, SetTrigger(), SetBool(), SetInt()
 
+# Prototype 4
+This project was made following the tutorial 'Unit 4 - Gameplay Mechanics' (https://learn.unity.com/project/unit-4-gameplay-mechanics)
+
 # Personal Project
 This project was made following the labs:
 
@@ -24,5 +27,3 @@ This project was made following the labs:
 # Mod the cube
 This project was made following the exercise https://learn.unity.com/tutorial/mod-the-cube
 
-# Player Control
-This project was made following the lab 'Lab 3 - Player Control' (https://learn.unity.com/tutorial/lab-3-player-control)
