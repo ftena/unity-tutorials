@@ -16,7 +16,10 @@ This project was made following the tutorial 'Unit 3 - Sound and Effects' (https
 - Animation Controllers, States, Layers and Transitions, SetTrigger(), SetBool(), SetInt()
 
 # Prototype 4
-This project was made following the tutorial 'Unit 4 - Gameplay Mechanics' (https://learn.unity.com/project/unit-4-gameplay-mechanics)
+This project was made following the tutorial 'Unit 4 - Gameplay Mechanics' (https://learn.unity.com/project/unit-4-gameplay-mechanics). It icludes:
+
+- Texture Wraps
+- Camera as child object
 
 # Personal Project
 This project was made following the labs:
