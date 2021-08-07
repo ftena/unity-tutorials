@@ -20,6 +20,9 @@ This project was made following the tutorial 'Unit 4 - Gameplay Mechanics' (http
 
 - Texture Wraps
 - Camera as child object
+- Random positions
+- Follow player
+- Bouncing using Physics Materials
 
 # Personal Project
 This project was made following the labs:
