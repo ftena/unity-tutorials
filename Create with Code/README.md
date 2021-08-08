@@ -23,6 +23,9 @@ This project was made following the tutorial 'Unit 4 - Gameplay Mechanics' (http
 - Random positions
 - Follow player
 - Bouncing using Physics Materials
+- IEnumerators and WaitForSeconds()
+- Coroutines
+- SetActive
 
 # Personal Project
 This project was made following the labs:

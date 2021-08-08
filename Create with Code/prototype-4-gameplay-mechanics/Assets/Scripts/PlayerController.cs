@@ -6,22 +6,28 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f;
     public bool hasPowerup = false; // to control if the player has the powerup
+    public GameObject powerupIndicator;
     private Rigidbody playerRb;
     private GameObject focalPoint; // to move in the direction the camera and focal point are facing
     private float powerupStrength = 10.0f;
+    private Vector3 powerupIndicatorOffset;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("Focal Point");
+        powerupIndicatorOffset = powerupIndicator.transform.position;
     }
 
-    // update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         float forwardInput = Input.GetAxis("Vertical");
         playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
+
+        // Set the powerup indicator as the same as the player position
+        powerupIndicator.transform.position = transform.position + powerupIndicatorOffset;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +35,7 @@ public class PlayerController : MonoBehaviour
         if(other.CompareTag("Powerup"))
         {
             hasPowerup = true;
+            powerupIndicator.gameObject.SetActive(true);
             Destroy(other.gameObject);
             StartCoroutine(PowerupCountdowRoutine());
         }
@@ -40,6 +47,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(7);
         // After the required seconds...
         hasPowerup = false;
+        powerupIndicator.gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision)
