@@ -26,6 +26,7 @@ This project was made following the tutorial 'Unit 4 - Gameplay Mechanics' (http
 - IEnumerators and WaitForSeconds()
 - Coroutines
 - SetActive
+- Waves to create enemies and power ups
 
 # Personal Project
 This project was made following the labs:
