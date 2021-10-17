@@ -1,11 +1,13 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject enemyPrefab; // to spawn new enemies
-    public GameObject powerupPrefab; // to spawn new power ups
+    enum Powerups {Powerup, Rocket, Smash};
+
+    public GameObject[] enemiesPrefabs; // to spawn new enemies
+    public GameObject[] powerupPrefabs; // to spawn new power ups
     public int enemyCount; // track the number of enemies
     public int waveNumber = 1;
     private int randomPosX = 9;
@@ -16,7 +18,6 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
             SpawnEnemyWave(waveNumber);
-            Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
     }
 
     // Update is called once per frame
@@ -28,16 +29,19 @@ public class SpawnManager : MonoBehaviour
         {            
             waveNumber++;
             SpawnEnemyWave(waveNumber);
-            Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
         }
     }
 
     void SpawnEnemyWave(int enemies)
     {
+        int index = Random.Range(0, powerupPrefabs.Length);           
+        Instantiate(powerupPrefabs[index], GenerateSpawnPosition(), powerupPrefabs[index].transform.rotation);
+
         for (int i = 0; i < enemies; ++i)
         {
+            index = Random.Range(0, enemiesPrefabs.Length);           
             Vector3 randomPos = GenerateSpawnPosition();
-            Instantiate(enemyPrefab, randomPos, enemyPrefab.transform.rotation);
+            Instantiate(enemiesPrefabs[index], randomPos, enemiesPrefabs[index].transform.rotation);
         }
     }
 
