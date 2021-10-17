@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    enum Powerups {Powerup, Rocket, Smash};
 
     public GameObject[] enemiesPrefabs; // to spawn new enemies
     public GameObject[] powerupPrefabs; // to spawn new power ups

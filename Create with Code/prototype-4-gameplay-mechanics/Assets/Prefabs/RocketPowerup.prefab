@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3600982066358178693}
   m_Layer: 0
   m_Name: RocketPowerup
-  m_TagString: Untagged
+  m_TagString: RocketPowerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,5 +89,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.67489624, y: 0.95568633, z: 0.20007594}
-  m_Center: {x: 0, y: -0.00000011920929, z: 0.000000007450581}
+  m_Size: {x: 0.97190356, y: 1.1189566, z: 0.41255793}
+  m_Center: {x: -0.0039169393, y: 0.0019973915, z: 0.030939262}
