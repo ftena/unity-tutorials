@@ -119,6 +119,18 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+
+            if (kindOfPowerup == Powerups.Smash)
+            {
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+                foreach (GameObject enemy in enemies)
+                {
+                    Rigidbody enemyRb = enemy.GetComponent<Rigidbody>();
+                    Vector3 awayFromPlayer = enemy.transform.position - transform.position;
+                    enemyRb.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse); // 'Impulse' addd the force immediately
+                }
+            }
         }
     }
 }
