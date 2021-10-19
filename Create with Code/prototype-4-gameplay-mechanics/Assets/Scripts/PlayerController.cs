@@ -85,8 +85,6 @@ public class PlayerController : MonoBehaviour
             kindOfPowerup = Powerups.Rocket;
             powerupIndicator.gameObject.SetActive(true);
             Destroy(other.gameObject);
-
-
             StartCoroutine(PowerupCountdowRoutine());
         }
         if(other.CompareTag("SmashPowerup"))
@@ -113,7 +111,7 @@ public class PlayerController : MonoBehaviour
         {
             Rigidbody enemy = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 awayFromPlayer = collision.gameObject.transform.position - transform.position;
-            enemy.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse); // 'Impulse' addd the force immediately
+            enemy.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse); // 'Impulse' add the force immediately
         }
 
         if (collision.gameObject.CompareTag("Ground"))
@@ -122,13 +120,14 @@ public class PlayerController : MonoBehaviour
 
             if (kindOfPowerup == Powerups.Smash)
             {
+                // find all the enemies
                 GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
                 foreach (GameObject enemy in enemies)
                 {
                     Rigidbody enemyRb = enemy.GetComponent<Rigidbody>();
                     Vector3 awayFromPlayer = enemy.transform.position - transform.position;
-                    enemyRb.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse); // 'Impulse' addd the force immediately
+                    enemyRb.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse); // 'Impulse' add the force immediately
                 }
             }
         }

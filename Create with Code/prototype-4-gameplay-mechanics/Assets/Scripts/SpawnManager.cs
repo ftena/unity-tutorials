@@ -6,9 +6,11 @@ public class SpawnManager : MonoBehaviour
 {
 
     public GameObject[] enemiesPrefabs; // to spawn new enemies
+    public GameObject bossPrefab; // to spawn new enemies
     public GameObject[] powerupPrefabs; // to spawn new power ups
     public int enemyCount; // track the number of enemies
     public int waveNumber = 1;
+    public int bossLevel = 3;
     private int randomPosX = 9;
     private int randomPosZ = 9;
     
@@ -28,6 +30,12 @@ public class SpawnManager : MonoBehaviour
         {            
             waveNumber++;
             SpawnEnemyWave(waveNumber);
+
+            if (waveNumber % bossLevel == 0)
+            {
+                Vector3 randomPos = GenerateSpawnPosition();
+                Instantiate(bossPrefab, randomPos, bossPrefab.transform.rotation);
+            }
         }
     }
 
