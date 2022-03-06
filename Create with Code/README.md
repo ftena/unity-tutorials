@@ -28,6 +28,13 @@ This project was made following the tutorial 'Unit 4 - Gameplay Mechanics' (http
 - SetActive
 - Waves to create enemies and power ups
 
+# Prototype 5
+This project was made following the tutorial 'Unit 5 - User Interface' (https://learn.unity.com/project/unit-5-user-interface). It includes:
+
+- Add Torque
+- Game Manager
+- Mouse Events
+
 # Personal Project
 This project was made following the labs:
 
