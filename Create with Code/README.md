@@ -12,7 +12,7 @@ This project was made following the tutorial 'Unit 3 - Sound and Effects' (https
 
 - Gravity, Animation, Sound, and Particle Effects
 - Jump Force, Rigidbody constraints
-- Script communication, Tags
+- Script communication & Tags
 - Animation Controllers, States, Layers and Transitions, SetTrigger(), SetBool(), SetInt()
 
 # Prototype 4
@@ -34,6 +34,9 @@ This project was made following the tutorial 'Unit 5 - User Interface' (https://
 - Add Torque
 - Game Manager
 - Mouse Events
+- TextMeshPro  & Anchor Points
+- Canvas
+- Calling methods from other scripts
 
 # Personal Project
 This project was made following the labs:
