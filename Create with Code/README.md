@@ -34,9 +34,12 @@ This project was made following the tutorial 'Unit 5 - User Interface' (https://
 - Add Torque
 - Game Manager
 - Mouse Events
-- TextMeshPro  & Anchor Points
+- TextMeshPro, Buttons  & Anchor Points
 - Canvas
 - Calling methods from other scripts
+- Game states
+- On Click Events
+- Scene Management
 
 # Personal Project
 This project was made following the labs:
