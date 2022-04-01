@@ -40,6 +40,8 @@ This project was made following the tutorial 'Unit 5 - User Interface' (https://
 - Game states
 - On Click Events
 - Scene Management
+- AddListener()
+- Passing parameters between scripts 
 
 # Personal Project
 This project was made following the labs:

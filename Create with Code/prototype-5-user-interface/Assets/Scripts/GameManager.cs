@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // required to use TextMeshPro
 using UnityEngine.SceneManagement; // to interact with scenes in the scene folder
-using UnityEngine.UI; // required to interact with the butto
+using UnityEngine.UI; // required to interact with the buttons
 
 public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
+    public GameObject titleScreen;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public Button restartButton;
@@ -18,14 +19,22 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnTarget());
-        UpdateScore(0);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void StartGame(int difficulty)
+    {
+        spawnRate /= difficulty;
+
+        StartCoroutine(SpawnTarget());
+        UpdateScore(0);
+
+        titleScreen.gameObject.SetActive(false);
     }
 
     IEnumerator SpawnTarget()
