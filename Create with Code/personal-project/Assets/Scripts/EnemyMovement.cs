@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed = 5.0f;
     private Rigidbody objectRb;
-    private float zDestroy = -20.0f;
+    private float zDestroy = -13.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        objectRb.AddForce(Vector3.forward * -speed);
+        objectRb.AddForce(Vector3.forward * -speed, ForceMode.Impulse);
 
         if (transform.position.z < zDestroy)
         {
