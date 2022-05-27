@@ -10,14 +10,10 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput = 0.0f;
     public float forwardInput = 0.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    /* We use FixedUpdate instead of Update because it's
+     * better to do movement and physics.
+     */
+    void FixedUpdate()
     {
         // We get the player input
        horizontalInput = Input.GetAxis("Horizontal");
