@@ -1,23 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     // Required variables
-    public float speed = 15.0f;
+    // old variable: public float speed = 15.0f;    
     public float turnSpeed = 35.0f;
     public float horizontalInput = 0.0f;
     public float forwardInput = 0.0f;
     [SerializeField] private float horsePower = 0.0f;
     private Rigidbody playerRb;
     [SerializeField] GameObject centerOfMass;
+    [SerializeField] TextMeshProUGUI speedometerText;
+    [SerializeField] private float speed = 0.0f;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         // set the center of mass to the position of the centerOfMass object
         playerRb.centerOfMass = centerOfMass.transform.position; 
+    }
+
+    private void Update()
+    {
+        speed = Mathf.Round(playerRb.velocity.magnitude * 2.237f); // 3.6 for hph
+        speedometerText.SetText("Speed: " + speed + "mph");
     }
 
     /* We use FixedUpdate instead of Update because it's
