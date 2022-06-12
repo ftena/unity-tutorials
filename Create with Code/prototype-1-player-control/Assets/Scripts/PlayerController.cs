@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject centerOfMass;
     [SerializeField] TextMeshProUGUI speedometerText;
     [SerializeField] private float speed = 0.0f;
+    [SerializeField] TextMeshProUGUI rpmText;
+    [SerializeField] private float rpm = 0.0f;
 
     void Start()
     {
@@ -25,8 +27,13 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        // Update speedometer text
         speed = Mathf.Round(playerRb.velocity.magnitude * 2.237f); // 3.6 for hph
-        speedometerText.SetText("Speed: " + speed + "mph");
+        speedometerText.SetText("Speed: " + speed + " mph");
+
+        // Update rpm text
+        rpm = Mathf.Round((speed % 30) * 40);
+        rpmText.SetText("RPM: " + rpm);
     }
 
     /* We use FixedUpdate instead of Update because it's
