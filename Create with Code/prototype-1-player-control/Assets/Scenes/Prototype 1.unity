@@ -5103,12 +5103,18 @@ MonoBehaviour:
   turnSpeed: 35
   horizontalInput: 0
   forwardInput: 0
+  allWheels:
+  - {fileID: 2131874763}
+  - {fileID: 1620424242}
+  - {fileID: 808885627}
+  - {fileID: 1743631883}
   horsePower: 30000
   centerOfMass: {fileID: 1720880334}
   speedometerText: {fileID: 1051538593}
   speed: 15
   rpmText: {fileID: 1830797286}
   rpm: 0
+  wheelsOnGround: 0
 --- !u!54 &1949712654
 Rigidbody:
   m_ObjectHideFlags: 0
