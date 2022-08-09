@@ -52,3 +52,6 @@ This project was made following the labs:
 # Mod the cube
 This project was made following the exercise https://learn.unity.com/tutorial/mod-the-cube
 
+# Mission Checkpoints
+## Counting Prototype
+Check at https://learn.unity.com/tutorial/counting-prototype
