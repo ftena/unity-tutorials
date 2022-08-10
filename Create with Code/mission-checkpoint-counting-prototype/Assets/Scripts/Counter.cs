@@ -19,6 +19,6 @@ public class Counter : MonoBehaviour
     {
         Count += 1;
         CounterText.text = "Count : " + Count;
-        Destroy(other.gameObject);
+        //Destroy(other.gameObject);
     }
 }
