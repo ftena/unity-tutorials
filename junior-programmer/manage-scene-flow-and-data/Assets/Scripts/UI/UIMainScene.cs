@@ -34,6 +34,11 @@ public class UIMainScene : MonoBehaviour
         Instance = null;
     }
 
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     private void Update()
     {
         if (m_CurrentContent == null)
