@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class MainManager: MonoBehaviour
 {
@@ -26,5 +27,39 @@ public class MainManager: MonoBehaviour
         Instance = this;
         // The MainManager GameObject attached to this script won't be destroyed when the scene changes.
         DontDestroyOnLoad(gameObject);
+
+        // Load color, stored in a json file, it this file exists.
+        LoadColor(); 
+    }
+
+    // [System.Serializable] is required for JsonUtility
+    [System.Serializable]
+    class SaveData
+    {
+        public Color TeamColor;
+    }
+
+    public void SaveColor()
+    {
+        SaveData data = new SaveData();
+        data.TeamColor = TeamColor;
+
+        string json = JsonUtility.ToJson(data);
+  
+        // File.WriteAllText writes a string to a file
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    } 
+
+    public void LoadColor()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            TeamColor = data.TeamColor;
+        }
     }
 }
+
