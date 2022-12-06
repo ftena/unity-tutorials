@@ -9,7 +9,7 @@ public class MainManager : MonoBehaviour
     public Brick BrickPrefab;
     public int LineCount = 6;
     public Rigidbody Ball;
-
+    public Text bestScoreText;
     public Text ScoreText;
     public GameObject GameOverText;
     
@@ -34,6 +34,14 @@ public class MainManager : MonoBehaviour
                 brick.PointValue = pointCountArray[i];
                 brick.onDestroyed.AddListener(AddPoint);
             }
+        }
+        
+        if ( GameControl.Instance.bestScore != 0 ) // there is a best score already
+        {
+            bestScoreText.text = $"Best Score : {GameControl.Instance.bestPlayerName} : {GameControl.Instance.bestScore}";
+        } else // first game ever
+        {
+            bestScoreText.text = $"Best Score : ??? : ???";
         }
     }
 
@@ -64,12 +72,25 @@ public class MainManager : MonoBehaviour
     void AddPoint(int point)
     {
         m_Points += point;
+        if ( m_Points > GameControl.Instance.bestScore ) // new best score for this player!
+        {
+            bestScoreText.text = $"Best Score : {GameControl.Instance.currentPlayerName} : {m_Points}";
+        }
         ScoreText.text = $"Score : {m_Points}";
     }
 
     public void GameOver()
     {
         m_GameOver = true;
+        Debug.Log($"points: {m_Points} bestScore: {GameControl.Instance.bestScore}");
+
+        if ( m_Points > GameControl.Instance.bestScore ) // new best score for this player!
+        {
+            GameControl.Instance.bestPlayerName = GameControl.Instance.currentPlayerName;
+            GameControl.Instance.bestScore = m_Points;
+            GameControl.Instance.SaveData();
+        }
+
         GameOverText.SetActive(true);
     }
 }

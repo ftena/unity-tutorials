@@ -9,7 +9,8 @@ public class GameControl: MonoBehaviour
 
     // Static instance of GameManager which allows it to be accessed by any other script.
     public static GameControl Instance; 
-    public string playerName;
+    public string currentPlayerName; // to pass the data between scenes
+    public string bestPlayerName;
     public int bestScore;
 
     private void Awake()
@@ -26,6 +27,7 @@ public class GameControl: MonoBehaviour
         }
 
         Instance = this;
+
         // The MainManager GameObject attached to this script won't be destroyed when the scene changes.
         DontDestroyOnLoad(gameObject);
 
@@ -44,7 +46,7 @@ public class GameControl: MonoBehaviour
     public void SaveData()
     {
         Data data = new Data();
-        data.playerName = playerName;
+        data.playerName = bestPlayerName;
         data.bestScore = bestScore;
 
         string json = JsonUtility.ToJson(data);
@@ -61,7 +63,7 @@ public class GameControl: MonoBehaviour
             string json = File.ReadAllText(path);
             Data data = JsonUtility.FromJson<Data>(json);
 
-            playerName = data.playerName;
+            bestPlayerName = data.playerName;
             bestScore = data.bestScore;
         }
     }
