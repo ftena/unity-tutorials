@@ -33,8 +33,5 @@ public class ResourcePile : Building
     public override string GetData()
     {
         return $"Producing at the speed of {ProductionSpeed}/s";
-        
     }
-    
-    
 }
