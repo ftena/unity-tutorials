@@ -8,7 +8,8 @@ public class MainManager: MonoBehaviour
     // Start() and Update() methods deleted - we don't need them right now
 
     // Static instance of GameManager which allows it to be accessed by any other script.
-    public static MainManager Instance; 
+    public static MainManager Instance { get; private set; } // get for the outside, set for the inside
+
     public Color TeamColor;
 
     private void Awake()
