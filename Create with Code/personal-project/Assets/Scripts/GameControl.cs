@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class MainManager: MonoBehaviour
+public class GameControl: MonoBehaviour
 {
     // Start() and Update() methods deleted - we don't need them right now
 
     // Static instance of GameManager which allows it to be accessed by any other script.
-    public static MainManager Instance { get; private set; } // get for the outside, set for the inside
-
-    public Color TeamColor;
+    public static GameControl Instance; 
+    public string currentPlayerName; // to pass the data between scenes
+    public string bestPlayerName;
+    public int bestScore;
 
     private void Awake()
     {
@@ -26,24 +27,27 @@ public class MainManager: MonoBehaviour
         }
 
         Instance = this;
+
         // The MainManager GameObject attached to this script won't be destroyed when the scene changes.
         DontDestroyOnLoad(gameObject);
 
         // Load color, stored in a json file, it this file exists.
-        LoadColor(); 
+        LoadData(); 
     }
 
     // [System.Serializable] is required for JsonUtility
     [System.Serializable]
-    class SaveData
+    class Data
     {
-        public Color TeamColor;
+        public string playerName;
+        public int bestScore;
     }
 
-    public void SaveColor()
+    public void SaveData()
     {
-        SaveData data = new SaveData();
-        data.TeamColor = TeamColor;
+        Data data = new Data();
+        data.playerName = bestPlayerName;
+        data.bestScore = bestScore;
 
         string json = JsonUtility.ToJson(data);
   
@@ -51,15 +55,16 @@ public class MainManager: MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     } 
 
-    public void LoadColor()
+    public void LoadData()
     {
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
-            SaveData data = JsonUtility.FromJson<SaveData>(json);
+            Data data = JsonUtility.FromJson<Data>(json);
 
-            TeamColor = data.TeamColor;
+            bestPlayerName = data.playerName;
+            bestScore = data.bestScore;
         }
     }
 }
