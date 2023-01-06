@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        GameControl.Instance.currentPlayerName = playerName.text;
+        GameControl.Instance.CurrentPlayerName = playerName.text;
         SceneManager.LoadScene(1);
     }
 

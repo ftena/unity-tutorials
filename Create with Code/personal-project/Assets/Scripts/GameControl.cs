@@ -8,8 +8,14 @@ public class GameControl: MonoBehaviour
     // Start() and Update() methods deleted - we don't need them right now
 
     // Static instance of GameManager which allows it to be accessed by any other script.
-    public static GameControl Instance; 
-    public string currentPlayerName; // to pass the data between scenes
+    // ENCAPSULATION
+    public static GameControl Instance {get; private set; } 
+    private string currentPlayerName; // to pass the data between scenes
+    public string CurrentPlayerName
+    {
+        get { return currentPlayerName; }
+        set { currentPlayerName = value; }
+    } 
     public string bestPlayerName;
     public int bestScore;
 

@@ -23,12 +23,20 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // ABSTRACTION
+        Spawn();
+    }
+
+    void Spawn()
+    {
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length; // look for all the different objects in our scene
 
         if (enemyCount == 0)
         {
             waveNumber++;
+            // ABSTRACTION
             SpawnEnemyWave(waveNumber);
+            // ABSTRACTION
             SpawnPowerup();
         }
     }
