@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Animal
+public class Player : Animal // INHERITANCE
 {
     public float speed = 15.0f;
-    private float zBound = 7.0f;
+    private float zBound = 23.0f;
     // If using physics, declare a new Rigidbody playerRb variable for it and initialize it in Start()
     private Rigidbody playerRb;
 
@@ -18,14 +18,12 @@ public class Player : Animal
     // Update is called once per frame
     void Update()
     {
-        // Moves the player based on arrow key input
-        MovePlayer();
-
+        Move();
         // Prevent the player from leaving the top or bottom of the screen
         ConstrainPlayerMovement();
     }
 
-    void MovePlayer()
+    public override void Move() // POLYMORPHISM
     {
         /* Notes:
         a) If using arrow keys, declare new verticalInput and/or horizontalInput variables 

@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // TODO: pending to add more common functionality
+    // Moves the player based on arrow key input
+    public virtual void Move()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
