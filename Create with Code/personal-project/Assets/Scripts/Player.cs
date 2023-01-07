@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Player : Animal
 {
     public float speed = 15.0f;
     private float zBound = 7.0f;
