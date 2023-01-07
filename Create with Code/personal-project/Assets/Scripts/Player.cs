@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : Animal // INHERITANCE
 {
     public float speed = 15.0f;
-    private float zBound = 23.0f;
+    private float zBound = 21.0f;
     // If using physics, declare a new Rigidbody playerRb variable for it and initialize it in Start()
     private Rigidbody playerRb;
 

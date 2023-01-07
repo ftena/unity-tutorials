@@ -48,6 +48,8 @@ This project was made following the labs:
 
 - Lab 2 - New Project with Primitives (https://learn.unity.com/tutorial/lab-2-new-project-with-primitives)
 - Lab 3 - Player Control (https://learn.unity.com/tutorial/lab-3-player-control)
+- Lab 4 - Basic Gameplay (https://learn.unity.com/tutorial/lab-4-basic-gameplay)
+- Lab 5 - Swap out your Assets (https://learn.unity.com/tutorial/lab-5-swap-out-your-assets)
 
 # Mod the cube
 This project was made following the exercise https://learn.unity.com/tutorial/mod-the-cube
